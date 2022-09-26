@@ -1,19 +1,22 @@
 class Solution {
-public:
-    int findContentChildren(vector<int>& g, vector<int>& s) {
-        sort(g.rbegin(),g.rend());  //descending order sorting
-        sort(s.rbegin(),g.rend());
-        int total=0;
-        int curr=0;
-        int n=g.size();
-        int m=s.size();
-        for(int i=0;i<n;i++){
-            if(curr<m && g[i]<=s[curr]){
-                total++;
-                curr++;
+    public int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(g);
+        
+        Arrays.sort(s);
+        int c_count=0;
+        int i=0;int j=0;
+        while(i<g.length && j<s.length){
+            if(g[i]<=s[j]){
+                c_count++;
+                i++;
+                j++;
+            }
+            else{
+                j++;
             }
         }
-        return total;
+        return c_count;
+        
         
     }
-};
+}
