@@ -6,11 +6,11 @@ class Solution {
         };
       for(String word:words){
         StringBuilder str=new StringBuilder();
-        for(char c:word.toString()){
+        for(char c:word.toCharArray()){
           int index=c-'a';
           str.append(morseCode[index]);
         }
-        decodedStr.add(str);
+        decodedStr.add(str.toString);
       }
       return decodedStr.size();
     }
