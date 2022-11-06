@@ -8,8 +8,10 @@ class Solution {
       String res="";
       int index=1;
       for(String word:sentence.split("\\s")){
+          if(index>1){
         res+=" ";
-      }
+          }
+      
       char first_letter=word.charAt(0);
       if(vowels.contains(first_letter)){
         res+=word+"ma";
@@ -20,8 +22,10 @@ class Solution {
       for(int i=0;i<index;i++){
         res+="a";
       }
-      index++;
-    }
-      return res;
+          index++;
+      }
+        return res;
     }
 }
+
+      
